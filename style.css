@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
 }
 
 
@@ -24,6 +24,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 10px;
+    background: var(--color-black)
 }
 
 
@@ -124,8 +125,8 @@ body {
     position: relative;
     width: fit-content;
 
-    font-size: 4.5rem;
-    line-height: 6rem;
+    font-size: calc(2vw + 1.5rem);
+    line-height: calc(3vw + 1.8rem);
 
     animation: written_text .5s ease forwards;
 }
@@ -178,6 +179,7 @@ body {
 
 .person-name {
     margin-top: 11rem;
+    padding: 0px 20px;
 }
 
 
@@ -186,15 +188,15 @@ body {
     /* align-items: center; */
     justify-content: center;
 
+    margin: 5rem 0rem 2rem;
     flex-direction: column;
-    margin-top: 6rem;
+    padding: 0px 20px;
 }
 
 
 .stacks-content h3 {
     color: var(--color-white);
-    font-size: 1.15rem;
-
+    font-size: calc(.85vw + .5rem);
     margin-left: 20px;
 }
 
@@ -202,12 +204,12 @@ body {
 .stacks  {
     display: flex;
     align-items: center;
-
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
 
-.stacks ul li {
+.stacks li {
     display: flex;
     align-items: center;
 
@@ -220,15 +222,15 @@ body {
 }
 
 
-.stacks ul li img {
-    width: 30px;
+.stacks li img {
+    width: calc(3.5vw + .5rem);
     height: auto;
     
     transition: transform .3s ease;
 }
 
 
-.stacks ul li div img:hover{
+.stacks li div img:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -240,22 +242,95 @@ body {
 } */
 
 
-.stacks ul li div:hover::after {
+.stacks li div:hover::after {
     content: attr(data);
     position: absolute;
-    top: 50px;
-    left: 10px;
+    top: calc(5vw + 1rem);
+    left: calc(1vw + 0.5rem);
 
     width: 20px;
     height: 20px;
 
     color: var(--color-white);
+    font-size: 1.2vw;
 }
+
+/* small */
+@media (max-width: 376px){
+    .person-name {
+        padding: 0px 10px;
+    }
+
+    
+    .stacks-content {
+        padding: 0px 10px;
+    }
+
+    .stacks-content h3 {
+        margin-left: 10px;
+    }
+
+    .stacks {
+        margin-top: 10px;
+    }
+    
+    .stacks li {
+        margin-top: 0px;
+    }
+
+    .stacks li img {
+        width: calc(3.5vw + .5rem);
+    }
+}
+
+
+@media (min-width: 377px) and (max-width: 768px){
+
+    .person-name {
+        padding: 0px 10px;
+    }
+
+    
+    .stacks-content{
+        padding: 0px 15px;
+    }
+
+    .stacks-content h3 {
+        margin-left: 10px;
+    }
+
+    .stacks {
+        margin-top: 10px;
+    }
+    
+    .stacks li {
+        margin: 0px;
+    }
+
+
+    .stacks li img {
+        width: calc(3.2vw + .5rem);
+    }
+
+
+}
+
+
+@media (max-width: 1000px) and (orientation: landscape){
+    .stacks li div:hover::after {
+        font-size: 1.3vw;
+    }
+    
+    
+    .stacks-content h3 {
+        font-size: 2vw;
+    }
+} 
 
 
 .person-background {
     height: 100vh;
-    width: 49.680%;
+    width: 50%;
 
     display: flex;
     justify-content: center;
@@ -281,7 +356,7 @@ body {
     left: 0;
 
     height: 100%;
-    width: 100vh;
+    width: 100%;
     
     opacity: .7;
     z-index: -1;
@@ -290,7 +365,11 @@ body {
         linear-gradient(90deg, transparent 30%, var(--color-black)),
         linear-gradient(180deg, transparent 30%, var(--color-black)),
         linear-gradient(0deg, transparent 65%, var(--color-black));
+
+           /* Ajuste de tamanho e posição */
+  
 }
+
 
 
 .wrapper-profile-photo {
@@ -314,8 +393,8 @@ body {
 
 
 .profile-photo {
-    width: 300px;
-    height: 300px;
+    max-width: 320px;
+    width: 100%;
     border-radius: 50%;
 }
 
@@ -716,7 +795,10 @@ body {
 
 .contact-icon-content h2 {
     margin: 4rem;
-    padding: 1rem;
+    padding: .7rem;
+
+    /* margin: 3rem 3rem 3rem 0rem;
+    padding: 1rem 1rem 1rem 0rem; */
 
     font-size: 3rem;
     color: var(--color-white);
@@ -727,15 +809,25 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
+
+.contact-icon-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 0rem 3rem;
+    padding: 1rem;
+}
 
 .contact-content {
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    margin: 0rem 4rem;
+    margin: 0rem 3rem;
     padding: 1rem;
 }
 
